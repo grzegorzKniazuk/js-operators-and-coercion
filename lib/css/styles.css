@@ -1,0 +1,188 @@
+.reveal .slides > section, .reveal .slides > section > section {
+  padding: 0; }
+
+.reveal section img {
+  margin: 0;
+  border: none;
+  background: none; }
+
+.reveal .progress span {
+  background: #ffc40b; }
+
+.reveal .controls button {
+  color: #ffc40b; }
+
+.reveal p {
+  margin: 0; }
+
+.reveal h1 {
+  margin: 0; }
+
+.slides section section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Century Gothic', serif; }
+  .slides section section header {
+    width: 100%;
+    height: 90%;
+    background-image: url("../15136.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; }
+    .slides section section header h1 {
+      display: flex;
+      align-items: center;
+      font-size: 48px;
+      text-shadow: 1px 1px 2px #000000; }
+      .slides section section header h1 img {
+        width: 128px;
+        height: 128px;
+        box-shadow: none;
+        margin-left: 15px;
+        margin-right: 15px; }
+    .slides section section header h2 {
+      position: absolute;
+      font-size: 32px;
+      bottom: 42%;
+      right: 25%;
+      text-shadow: 1px 1px 2px #000000; }
+  .slides section section footer {
+    display: flex;
+    justify-content: start;
+    padding-top: 15px;
+    padding-bottom: 15px; }
+    .slides section section footer img {
+      display: flex;
+      align-self: center;
+      margin-left: 15px; }
+    .slides section section footer address {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      align-self: center;
+      margin-left: 15px; }
+      .slides section section footer address span:first-of-type {
+        font-size: 36px; }
+      .slides section section footer address span:last-of-type {
+        font-size: 24px; }
+  .slides section section .slide-content-header {
+    width: 100%;
+    height: 12%;
+    background-image: linear-gradient(45deg, #f9a31a 25%, #fbaf15 25%, #fbaf15 50%, #f9a31a 50%, #f9a31a 75%, #fbaf15 75%, #fbaf15 100%);
+    background-size: 20.00px 20.00px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column; }
+    .slides section section .slide-content-header h1 {
+      margin-left: calc(2.5% + 15px);
+      text-transform: none;
+      font-size: 48px;
+      font-family: 'Century Gothic', serif;
+      text-shadow: 1px 1px 2px #000000; }
+    .slides section section .slide-content-header h2 {
+      margin-left: calc(2.5% + 15px);
+      text-transform: none;
+      font-size: 32px;
+      font-family: 'Century Gothic', serif;
+      text-shadow: 1px 1px 2px #000000; }
+  .slides section section .slide-content {
+    display: flex;
+    width: 100%;
+    height: 88%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .slides section section .slide-content article {
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      height: 95%;
+      width: 95%;
+      padding: 15px; }
+      .slides section section .slide-content article p {
+        font-size: 32px;
+        text-align: start; }
+        .slides section section .slide-content article p span {
+          font-size: 32px; }
+          .slides section section .slide-content article p span.true {
+            color: #28a745; }
+          .slides section section .slide-content article p span.false {
+            color: #dc3545; }
+          .slides section section .slide-content article p span span.true {
+            color: #28a745; }
+          .slides section section .slide-content article p span span.false {
+            color: #dc3545; }
+        .slides section section .slide-content article p .exception {
+          font-size: 14px; }
+        .slides section section .slide-content article p input {
+          width: 200px;
+          font-size: 24px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          padding-left: 15px;
+          outline: none;
+          border-radius: 8px;
+          border: 2px solid #222222; }
+          .slides section section .slide-content article p input:focus {
+            border: 2px solid #28a745; }
+      .slides section section .slide-content article p + p {
+        margin-top: 20px; }
+      .slides section section .slide-content article ul {
+        font-size: 32px; }
+        .slides section section .slide-content article ul li {
+          display: flex;
+          align-items: center;
+          list-style-type: none; }
+          .slides section section .slide-content article ul li:before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border-radius: 24px;
+            border: 4px solid #ffc40b;
+            margin-right: 15px; }
+        .slides section section .slide-content article ul li + li {
+          margin-top: 20px; }
+        .slides section section .slide-content article ul + p {
+          margin-top: 20px; }
+      .slides section section .slide-content article .example {
+        width: 100%;
+        height: 100%; }
+        .slides section section .slide-content article .example pre {
+          margin-left: 0;
+          width: auto;
+          margin-top: 48px;
+          margin-bottom: 4px;
+          border: 2px solid #222222;
+          border-radius: 2px; }
+          .slides section section .slide-content article .example pre code {
+            font-size: 24px; }
+        .slides section section .slide-content article .example pre:first-of-type {
+          margin-top: 20px; }
+        .slides section section .slide-content article .example button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 140px;
+          font-size: 24px;
+          background-color: #222222;
+          padding-top: 7px;
+          padding-bottom: 7px;
+          cursor: pointer;
+          outline: none;
+          border: 2px solid #ffc40b;
+          border-radius: 2px;
+          color: #ffffff; }
+      .slides section section .slide-content article .two-columns {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around; }
+        .slides section section .slide-content article .two-columns .example {
+          width: 47.5%;
+          height: 100%; }

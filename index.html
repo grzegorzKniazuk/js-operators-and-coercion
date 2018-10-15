@@ -1,0 +1,514 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Grzegorz Kniazuk">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>JS - Operatory</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/styles.css">
+		<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section spellcheck="false">
+					<section>
+						<header>
+							<!--<h1>== <img src="lib/versus.svg"> ===</h1>-->
+							<h1>Operatory (nie tylko) porównania</h1>
+							<h2>w JavaScript</h2>
+						</header>
+						<footer>
+							<img src="lib/logo.png" alt="">
+							<address>
+								<span>Grzegorz Kniażuk | Britenet</span>
+								<span>grzegorz.kniazuk@britenet.com.pl</span>
+							</address>
+						</footer>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Krótki wstęp</h1>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>JavaScript posiada dwa operatory porównania służące do testowania równości operandów, z pozoru różnią się one jedynie pod względem wizualnym.</p>
+								<p>Aby zacząć mówić o operatorach trzeba wspomnieć o typach danych w JavaScript. Typy danych w tym języku dzielimy na dwie grupy, typy proste (primitives) oraz typy referencyjne (references).</p>
+								<p>Co zawiera prezentacja?</p>
+								<ul>
+									<li>Typy proste a typy referencyjne a operatory porównania</li>
+									<li>operatory równości i identyczności</li>
+									<li>niejawna konwersja typów</li>
+									<li>wartości "falsy"</li>
+									<li>praktyczne przykłady</li>
+								</ul>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Typy proste i referencyjne</h1>
+							<h2>a operatory porównania</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p><strong>Typy proste</strong></p>
+								<p>Prawie wszystkie operatory porównania występujące w JavaScript korzystają z ”luźnego typowania”, oznacza to że w przypadku operandów o różnych typach danych następuje ich konwersja do wspólnego typu.</p>
+								<p>Jedynymi ”silnie typowanymi” operatorami porównania typów prostych są ”===” oraz ”!==”, operator identyczności i operator nieidentyczności, które przed porównaniem wartości operandów sprawdzają ich typ.</p>
+								<p><strong>Typy referencyjne</strong></p>
+								<p>Zarówno typ jak i wartość operandów nie jest brana pod uwagę, sprawdzane jest natomiast to na jaki obiekt operandy wskazują.</p>
+							</article>
+						</div>
+					</section>
+					<section><div class="slide-content-header">
+						<h1>== operator równości</h1>
+					</div>
+						<div class="slide-content">
+							<article>
+								<ul>
+									<li>porównuje wyłącznie wartości operandów</li>
+									<li>dokonuje niejawnej konwersji typów w przypadku gdy są one różne</li>
+									<li>konwersje typów sprawiają, że operator ten może być mniej wydajny od operatora identyczności</li>
+								</ul>
+								<p>Przykłady:</p>
+								<div class="example">
+									<pre><code contenteditable="true">4 == "4"</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">false == 0</code></pre>
+									<button class="play">Sprawdź</button>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>=== operator identyczności</h1>
+						</div>
+						<div class="slide-content">
+							<article>
+								<ul>
+									<li>brak niejawnej konwersji typów</li>
+									<li>porównuje zarówno wartości, jak i typy operandów</li>
+									<li>Najpierw następuje porównanie typów operandów, następnie jeśli typy te są zgodne porównuje ich wartości</li>
+								</ul>
+								<p>Przykłady:</p>
+								<div class="example">
+									<pre><code contenteditable="true">4 === "4"</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">false === 0</code></pre>
+									<button class="play">Sprawdź</button>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Sprowadzanie operandów wyrażenia do wspólnego typu tak aby można było je ze sobą porównać</p>
+								<p>Konwersja typów ma miejsce podczas próby porównywania równości dwóch wartości prymitywnych o różnych typach. W takim przypadku JavaScript spróbuje przekształcić wartości operandów do typu number. W przypadku niemożliwości konwersji w miejsce operandu otrzymujemy NaN.</p>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>number == string</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>W takich wypadkach string podlega próbie konwersji na number. W przypadku nieudanej próby string zostaje zamieniony na NaN.</p>
+								<p>Przykłady:</p>
+								<div class="example">
+									<pre><code contenteditable="true">6 == "6"</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">3 == "trzy"</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">7 == "7a"</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">1 == "true"</code></pre>
+									<button class="play">Sprawdź</button>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>number == boolean</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Wartość logiczna jest zamieniana na liczbę.
+									<br><span class="true">true</span> = 1
+									<br><span class="false">false</span> = 0
+								</p>
+								<p>Przykłady:</p>
+								<div class="example">
+									<pre><code contenteditable="true">1 == true</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">0 == false</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">2 == true</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">1 == false</code></pre>
+									<button class="play">Sprawdź</button>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>string == boolean</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>W tym przypadku oba operandy są konwertowane na liczbę.</p>
+								<p>Przykłady:</p>
+								<div class="example">
+									<pre><code contenteditable="true">"1" == true</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">"0" == false</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">"5" == false</code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">"true" == true</code></pre>
+									<button class="play">Sprawdź</button>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów a typy referencyjne</h1>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Przy pracy z typami referyncyjnymi nie jest sprawdzany typ ani zawartość danego operandu a to na jaki obiekt wskazuje. Obydwa operatory porównania sprawdzają czy operandy są referencją do tego samego obiektu. Zastosowanie zarówno "==" jak i "===" przynosi tutaj te same wyniki.<br><span class="exception">( Oprócz jednego specjalnego przypadku. )</span></p>
+								<p>Przykłady:</p>
+								<div class="example">
+									<pre><code>
+let a = [1,2,3];
+let b = [1,2,3];
+
+let c = { x: 1, y: 2 };
+let d = { x: 1, y: 2 };
+									</code></pre>
+									<div class="two-columns">
+										<div class="example">
+											<pre><code contenteditable="true">a == b</code></pre>
+											<button class="ab">Sprawdź</button>
+											<pre><code contenteditable="true">a === b</code></pre>
+											<button class="ab2">Sprawdź</button>
+										</div>
+										<div class="example">
+											<pre><code contenteditable="true">c == d</code></pre>
+											<button class="cd">Sprawdź</button>
+											<pre><code contenteditable="true">c === d</code></pre>
+											<button class="cd2">Sprawdź</button>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów a typy referencyjne c.d.</h1>
+						</div>
+						<div class="slide-content">
+							<article>
+								<div class="example">
+									<pre><code>
+let a = [1,2,3];
+let b = [1,2,3];
+let c = a;
+
+let d = { x: 1, y: 2 };
+let e = { x: 1, y: 2 };
+let f = d;
+									</code></pre>
+									<div class="two-columns">
+										<div class="example">
+											<pre><code contenteditable="true">c == a</code></pre>
+											<button class="ab3">Sprawdź</button>
+											<pre><code contenteditable="true">c === a</code></pre>
+											<button class="ab4">Sprawdź</button>
+										</div>
+										<div class="example">
+											<pre><code contenteditable="true">f == d</code></pre>
+											<button class="cd3">Sprawdź</button>
+											<pre><code contenteditable="true">f === d</code></pre>
+											<button class="cd4">Sprawdź</button>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Wartości "falsy"</h1>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Wartościami ”falsy” nazywamy wartości które w przypadku konwersji typów zawsze będą równe logicznemu <span class="false">false</span>. JavaScript posiada 6 takich wartości, są to:</p>
+								<ul>
+									<li>false</li>
+									<li>0</li>
+									<li>""</li>
+									<li>null</li>
+									<li>undefined</li>
+									<li>NaN</li>
+								</ul>
+								<p>Wszystkie pozostałe wartości są uznawane za logiczne <span class="true">true</span>.</p>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Wartości "falsy"</h1>
+							<h2>false, 0, ""</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<div class="two-columns">
+									<div class="example">
+										<p><strong>operator równości</strong><br><span>Porównując ze sobą dowolne z trzech powyższych wartości ”falsy” zawsze otrzymamy <span class="true">true</span>.</span></p>
+										<pre><code contenteditable="true">false == 0</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">false == ""</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">0 == ""</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">undefined == ""</code></pre>
+										<button class="play">Sprawdź</button>
+									</div>
+									<div class="example">
+										<p><strong>operator identyczności</strong><br><span>Porównując ze sobą dowolne z trzech powyższych wartości ”falsy” zawsze otrzymamy <span class="false">false</span>.</span></p>
+										<pre><code contenteditable="true">false === 0</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">false === ""</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">0 === ""</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">undefined === ""</code></pre>
+										<button class="play">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Wartości "falsy"</h1>
+							<h2>null, undefined</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<div class="two-columns">
+									<div class="example">
+										<p><strong>operator równości</strong><br><span>Powyższe wartości są równe tylko sobie i sobie nawzajem. Logiczne <span class="true">true</span> przy porównaniach tych wartości otrzymamy tylko w przypadku porównania ich ze sobą lub pomiędzy sobą.</span></p>
+										<pre><code contenteditable="true">null == null</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">undefined == undefined</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">null == undefined</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">null == 0</code></pre>
+										<button class="play">Sprawdź</button>
+									</div>
+									<div class="example">
+										<p><strong>operator identyczności</strong><br><span>Powyższe wartości są równe tylko same sobie. Logiczne <span class="true">true</span> przy porównaniach tych wartości otrzymamy tylko w przypadku porównania ich ze sobą.</span><br><br></p>
+										<pre><code contenteditable="true">null === null</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">undefined === undefined</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">null === undefined</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">null === 0</code></pre>
+										<button class="play">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Wartości "falsy"</h1>
+							<h2>NaN</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>NaN niezależnie od użytego operatora porównania nie jest równoważna z jakąkolwiek inną wartością, jak i sama ze sobą.</p>
+								<div class="two-columns">
+									<div class="example">
+										<p><strong>operator równości</strong></p>
+										<pre><code contenteditable="true">NaN == null</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">NaN == undefined</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">NaN == NaN</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">NaN == 5</code></pre>
+										<button class="play">Sprawdź</button>
+									</div>
+									<div class="example">
+										<p><strong>operator identyczności</strong></p>
+										<pre><code contenteditable="true">NaN === null</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">NaN === undefined</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">NaN === NaN</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">NaN === 5</code></pre>
+										<button class="play">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>dlaczego unikać?</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<ul>
+									<li>Operator równości nie opiera się na porównaniu wartości logicznej operandów ale na ich wartościach numerycznych.</li>
+								</ul>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Pole input typu number</h1>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Można by przypuszczać że pole o typie number będzie również dostarczało nam w swoim value wartość typu number. Tak jednak się nie dzieje, pola te zapisują swoje wartości w typie string, co może prowadzić do błędów.</p>
+								<p>Przykład:</p>
+								<p><input type="number" title="number" placeholder="Podaj liczbę"></p>
+								<div class="example">
+									<pre><code contenteditable="true">10 + </code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">10 - </code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">10 * </code></pre>
+									<button class="play">Sprawdź</button>
+									<pre><code contenteditable="true">10 / </code></pre>
+									<button class="play">Sprawdź</button>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Operatory porównania a tablice</h1>
+							<h2>Czy tablica zawiera elementy?</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<div class="two-columns">
+									<div class="example">
+										<p>Operator równości</p>
+										<pre><code contenteditable="true">[ 1 ] == true</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">[ 0 ] == true</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code>let arr = [3];
+if (arr == true) {
+	console.log('true');
+} else {
+	 console.log('false');
+}</code></pre>
+										<button class="play arr1">Sprawdź</button>
+										<pre><code>let arr = [];
+if (arr) {
+	console.log('true');
+} else {
+	 console.log('false');
+}</code></pre>
+										<button class="play arr3">Sprawdź</button>
+									</div>
+									<div class="example">
+										<p>Operator identyczności</p>
+										<pre><code contenteditable="true">[ 1 ] === true</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">[ 0 ] === true</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code>let arr = [3];
+if (arr.length) {
+	console.log('true');
+} else {
+	console.log('false');
+}</code></pre>
+										<button class="play arr2">Sprawdź</button>
+										<pre><code>let arr = [];
+if (arr.length) {
+	console.log('true');
+} else {
+	console.log('false');
+}</code></pre>
+										<button class="play arr4">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Podsumowanie</h1>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Tak jak widzieliśmy na wcześniejszych slajdach operator porównania ’==’ potrafi wprowadzać zamieszanie i generować błędy w logice kodu aplikacji. Zrozumienie i zapamiętanie zasad dotyczących niejawnej konwersji typów oraz ”falsy values” potrafi często zaoszczędzić nam bólu głowy. W przypadku testowania równości należy używać operatora identyczności kiedykolwiek tylko jest to możliwe. Testowanie zarówno typu jak i wartości daje znacznie większą pewność że wynik będzie zgodny z oczekiwanym.</p>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Koniec</h1>
+						</div>
+						<div class="slide-content">
+							Dziękuję za uwagę :)
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+                mouseWheel: true,
+				controls: true,
+                display: 'flex',
+				width: '100%',
+				height: '100%',
+				margin: 0,
+                minScale: 1,
+                maxScale: 1,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+		<script src="lib/jquery-3.3.1.min.js"></script>
+		<script src="lib/js/scripts.js"></script>
+	</body>
+</html>
