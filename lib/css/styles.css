@@ -47,8 +47,8 @@
     .slides section section header h2 {
       position: absolute;
       font-size: 32px;
-      bottom: 41%;
-      right: 25%;
+      bottom: 37%;
+      right: 28%;
       text-shadow: 1px 1px 2px #000000; }
   .slides section section footer {
     display: flex;
