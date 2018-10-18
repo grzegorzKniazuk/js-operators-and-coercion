@@ -25,9 +25,9 @@
 							<h2>w JavaScript</h2>
 						</header>
 						<footer>
-							<img src="lib/logo.png" alt="">
+							<img src="lib/bn-logo.png" alt="Britenet logo">
 							<address>
-								<span>Grzegorz Kniażuk | Britenet</span>
+								<span>Grzegorz Kniażuk</span>
 								<span>grzegorz.kniazuk@britenet.com.pl</span>
 							</address>
 						</footer>
@@ -39,7 +39,7 @@
 						<div class="slide-content">
 							<article>
 								<p>W JavaScript mamy możliwość porównywać wartości na trzy sposoby. Oprócz metody <span class="code">Object.is()</span> mamy do dyspozycji dwa operatory porównania służące do testowania równości operandów, które to z pozoru różnią się jedynie pod względem wizualnym.</p>
-								<p>Przede wszystkim, aby zacząć mówić o operatorach trzeba wspomnieć o typach danych w JavaScript. Typy danych w tym języku dzielimy na dwie grupy, typy proste oraz typy referencyjne.</p>
+								<p>Przede wszystkim, mówiąc o operatorach warto wspomnieć o typach danych w JavaScript. Typy danych w tym języku dzielimy na dwie grupy: typy proste i referencyjne.</p>
 								<p>Co zawiera prezentacja?</p>
 								<ul>
 									<li>operatory równości i identyczności</li>
@@ -81,7 +81,7 @@
 							<article>
 								<ul>
 									<li>brak niejawnej konwersji typów</li>
-									<li>porównuje zarówno typy jak i wartości operandów</li>
+									<li>porównuje zarówno typy, jak i wartości operandów</li>
 									<li>najpierw następuje porównanie typów operandów, następnie jeśli typy te są zgodne porównuje ich wartości</li>
 								</ul>
 								<p>Przykłady:</p>
@@ -102,10 +102,10 @@
 						<div class="slide-content">
 							<article>
 								<p><strong>Typy proste</strong> <span class="types">( Boolean, String, Number, Symbol, Null, Undefined )</span></p>
-								<p>Prawie wszystkie operatory porównania występujące w JavaScript korzystają z ”luźnego typowania”, oznacza to że w przypadku operandów o różnych typach danych następuje ich konwersja do wspólnego typu.</p>
-								<p>Jedynym ”silnie typowanym” operatorem porównania wartości o typach prostych jest ”===”, operator identyczności, który zawsze przed porównaniem wartości operandów sprawdza ich typ.</p>
+								<p>Prawie wszystkie operatory porównania występujące w JavaScript korzystają z ”luźnego typowania”, oznacza to, że w przypadku operandów o różnych typach danych następuje ich konwersja do wspólnego typu.</p>
+								<p>Jedynym ”silnie typowanym” operatorem porównania wartości o typach prostych jest ”===”, czyli operator identyczności, który zawsze przed porównaniem wartości operandów sprawdza ich typ.</p>
 								<p><strong>Typy referencyjne</strong> <span class="types">( Object )</span></p>
-								<p>Zarówno typ jak i wartość operandów nie jest brana pod uwagę. Operatory porównania sprawdzają natomiast to na jaki obiekt operandy wskazują.</p>
+								<p>Dla operandów o typie Object typ i wartość operandów nie jest brana pod uwagę. Operatory porównania sprawdzają natomiast to na jaki obiekt operandy wskazują.</p>
 							</article>
 						</div>
 					</section>
@@ -116,7 +116,7 @@
 						</div>
 						<div class="slide-content">
 							<article>
-								<p>Przy pracy z typami referencyjnymi nie jest sprawdzany typ ani zawartość danego operandu a to na jaki obiekt wskazuje. Obydwa operatory porównania sprawdzają czy operandy są referencją do tego samego obiektu. Zastosowanie zarówno "==" jak i "===" przynosi tutaj te same wyniki.<br><span class="exception">( Oprócz jednego specjalnego przypadku. )</span></p>
+								<p>Przy pracy z typami referencyjnymi nie jest sprawdzany typ ani zawartość danego operandu, a to na jaki obiekt wskazuje. Obydwa operatory porównania sprawdzają czy operandy są referencją do tego samego obiektu. Zastosowanie zarówno "==", jak i "===" przynosi tutaj te same wyniki.<br><span class="exception">( Oprócz jednego specjalnego przypadku. )</span></p>
 								<p>Przykłady:</p>
 								<div class="example">
 									<pre><code>
@@ -245,12 +245,12 @@ let f = d;
 						</div>
 						<div class="slide-content">
 							<article>
-								<p>Wartościami ”falsy” nazywamy wartości które w przypadku konwersji typów zawsze będą równe logicznemu <span class="false">false</span>. JavaScript posiada 6 takich wartości, są to:</p>
+								<p>Wartościami ”falsy” nazywamy wartości, które w przypadku konwersji typów zawsze będą równe logicznemu <span class="false">false</span>. JavaScript posiada 6 takich wartości. Są to:</p>
 								<ul>
 									<li>false</li>
 									<li>0</li>
 									<li>""</li>
-									<li>Null</li>
+									<li>null</li>
 									<li>undefined</li>
 									<li>NaN</li>
 								</ul>
@@ -312,7 +312,7 @@ let f = d;
 										<button class="play">Sprawdź</button>
 									</div>
 									<div class="example">
-										<p><strong>operator identyczności</strong><br><span>Powyższe wartości są równe tylko same sobie. Logiczne <span class="true">true</span> przy porównaniach tych wartości otrzymamy tylko w przypadku porównania ich ze sobą.</span><br><br></p>
+										<p><strong>operator identyczności</strong><br><span>Powyższe wartości są równe tylko same sobie. Logiczne <span class="true">true</span> przy porównaniach tych wartości otrzymamy tylko w przypadku porównania ich ze sobą.</span></p>
 										<pre><code contenteditable="true">null === null</code></pre>
 										<button class="play">Sprawdź</button>
 										<pre><code contenteditable="true">undefined === undefined</code></pre>
@@ -368,10 +368,10 @@ let f = d;
 						<div class="slide-content">
 							<article>
 								<p>Sprowadzanie operandów wyrażenia do wspólnego typu tak aby można było wykonać akcje związane z użytym operatorem.</p>
-								<p>JavaScript używa niejawnej konwersji typów w przypadku gdy operandy wyrażenia są różnego typu. Oznacza to, że operator obsługujący tą właściwość wykona niejawną konwersję na operandach tylko wtedy gdy będą one różnego typu.</p>
-								<p>Nie wszystkie operatory wykorzystują ten mechanizm, oraz nie działa on identycznie w każdym z nich.</p>
-								<p>Konwersja typów która ma miejsce podczas porównywania równości dwóch wartości o różnych typach sprowadza się do przekształcenia wartości operandów do typu Number.</p>
-								<p>Użycie operatora konkatenacji w przypadku gdy z jeden operandów będzie typu String spowoduje niejawną konwersję drugiego operanda do tego typu.</p>
+								<p>JavaScript używa niejawnej konwersji typów w przypadku, gdy operandy wyrażenia są różnego typu. Oznacza to, że operator obsługujący tą właściwość wykona niejawną konwersję na operandach tylko wtedy gdy będą one różnego typu.</p>
+								<p>Nie wszystkie operatory wykorzystują ten mechanizm, jak również nie działa on identycznie w każdym z nich.</p>
+								<p>Konwersja typów, która ma miejsce podczas porównywania równości dwóch wartości o różnych typach sprowadza się do przekształcenia wartości operandów do tego samego typu.</p>
+								<p>Użycie operatora konkatenacji w przypadku, gdy z jeden operandów będzie typu String spowoduje niejawną konwersję drugiego operanda do tego typu.</p>
 							</article>
 						</div>
 					</section>
@@ -382,7 +382,7 @@ let f = d;
 						</div>
 						<div class="slide-content">
 							<article>
-								<p>W takich wypadkach String podlega próbie konwersji na Number. W przypadku niepowodzenia String zostaje zamieniony na NaN.</p>
+								<p>W takich wypadkach String podlega próbie konwersji na Number. W przypadku niepowodzenia ciąg znaków zostaje zamieniony na NaN.</p>
 								<p>Przykłady:</p>
 								<div class="example">
 									<pre><code contenteditable="true">6 == "6"</code></pre>
@@ -451,7 +451,7 @@ let f = d;
 						</div>
 						<div class="slide-content">
 							<article>
-								<p>Operator dodawania zwraca sumę operandów po ich konwersji na typ Number lub jeśli chociaż jeden operand jest łańcuchem znaków, ich konkatenacje.</p>
+								<p>Operator dodawania zwraca sumę operandów po ich konwersji na typ Number lub, jeśli chociaż jeden operand jest łańcuchem znaków, ich konkatenacje.</p>
 								<p>Przykłady:</p>
 								<div class="two-columns">
 									<div class="example">
@@ -490,24 +490,24 @@ let f = d;
 								<p>Przykłady:</p>
 								<div class="two-columns">
 									<div class="example">
-										<pre><code>false + "1"</code></pre>
-										<button class="dod1">Sprawdź</button>
-										<pre><code>false + false</code></pre>
-										<button class="dod2">Sprawdź</button>
-										<pre><code>true + true</code></pre>
-										<button class="dod3">Sprawdź</button>
-										<pre><code>5 + "Britenet"</code></pre>
-										<button class="dod4">Sprawdź</button>
+										<pre><code>6 - "2"</code></pre>
+										<button class="od1">Sprawdź</button>
+										<pre><code>6 - false</code></pre>
+										<button class="od2">Sprawdź</button>
+										<pre><code>6 - true</code></pre>
+										<button class="od3">Sprawdź</button>
+										<pre><code>"Britenet" - 6</code></pre>
+										<button class="od4">Sprawdź</button>
 									</div>
 									<div class="example">
-										<pre><code>true + "Britenet"</code></pre>
-										<button class="dod5">Sprawdź</button>
-										<pre><code>true + "true"</code></pre>
-										<button class="dod6">Sprawdź</button>
-										<pre><code>5 + "5"</code></pre>
-										<button class="dod7">Sprawdź</button>
-										<pre><code>-3 + true</code></pre>
-										<button class="dod8">Sprawdź</button>
+										<pre><code>true - "Britenet"</code></pre>
+										<button class="od5">Sprawdź</button>
+										<pre><code>false - true</code></pre>
+										<button class="od6">Sprawdź</button>
+										<pre><code>true - false</code></pre>
+										<button class="od7">Sprawdź</button>
+										<pre><code>-3 - true</code></pre>
+										<button class="od8">Sprawdź</button>
 									</div>
 								</div>
 							</article>
@@ -516,88 +516,294 @@ let f = d;
 					<section>
 						<div class="slide-content-header">
 							<h1>Niejawna konwersja typów</h1>
-							<h2>dlaczego unikać?</h2>
+							<h2>operator dzielenia</h2>
 						</div>
 						<div class="slide-content">
 							<article>
-								<ul>
-									<li>Operator równości nie opiera się na porównaniu wartości logicznej operandów ale na ich wartościach numerycznych.</li>
-									<li>Operator konkatenacji w przypadku napotkania wartości o typie String w swoich operandach przekształca pozostałe z nich również do typu String.</li>
-								</ul>
-							</article>
-						</div>
-					</section>
-					<section>
-						<div class="slide-content-header">
-							<h1>Pole input typu Number</h1>
-						</div>
-						<div class="slide-content">
-							<article>
-								<p>Można by przypuszczać że pole o typie Number będzie również dostarczało nam w swoim value wartość typu Number. Tak jednak się nie dzieje, pola te zapisują swoje wartości w typie String, co może prowadzić do błędów.</p>
-								<p>Przykład:</p>
-								<p><input type="Number" title="Number" placeholder="Podaj liczbę"></p>
-								<div class="example">
-									<pre><code contenteditable="true">10 + </code></pre>
-									<button class="play">Sprawdź</button>
-									<pre><code contenteditable="true">10 - </code></pre>
-									<button class="play">Sprawdź</button>
-									<pre><code contenteditable="true">10 * </code></pre>
-									<button class="play">Sprawdź</button>
-									<pre><code contenteditable="true">10 / </code></pre>
-									<button class="play">Sprawdź</button>
+								<p>Operator dzielenia zwraca iloraz operandów, dokonując niejawnej konwersji typów do typu Number.
+								</p>
+								<p>Przykłady:</p>
+								<div class="two-columns">
+									<div class="example">
+										<pre><code>6 / "2"</code></pre>
+										<button class="dz1">Sprawdź</button>
+										<pre><code>6 / false</code></pre>
+										<button class="dz2">Sprawdź</button>
+										<pre><code>6 / true</code></pre>
+										<button class="dz3">Sprawdź</button>
+										<pre><code>"Britenet" / 6</code></pre>
+										<button class="dz4">Sprawdź</button>
+									</div>
+									<div class="example">
+										<pre><code>true / "Britenet"</code></pre>
+										<button class="dz5">Sprawdź</button>
+										<pre><code>false / true</code></pre>
+										<button class="dz6">Sprawdź</button>
+										<pre><code>true / false</code></pre>
+										<button class="dz7">Sprawdź</button>
+										<pre><code>-3 / true</code></pre>
+										<button class="dz8">Sprawdź</button>
+									</div>
 								</div>
 							</article>
 						</div>
 					</section>
 					<section>
 						<div class="slide-content-header">
-							<h1>Operatory porównania a tablice</h1>
-							<h2>Czy tablica zawiera elementy?</h2>
+							<h1>Niejawna konwersja typów</h1>
+							<h2>operator mnożenia</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Operator mnożenia zwraca iloczyn operandów, dokonując niejawnej konwersji typów do typu Number.</p>
+								<p>Przykłady:</p>
+								<div class="two-columns">
+									<div class="example">
+										<pre><code>6 * "2"</code></pre>
+										<button class="mn1">Sprawdź</button>
+										<pre><code>6 * false</code></pre>
+										<button class="mn2">Sprawdź</button>
+										<pre><code>6 * true</code></pre>
+										<button class="mn3">Sprawdź</button>
+										<pre><code>"Britenet" * 6</code></pre>
+										<button class="mn4">Sprawdź</button>
+									</div>
+									<div class="example">
+										<pre><code>true * false</code></pre>
+										<button class="mn5">Sprawdź</button>
+										<pre><code>true * "true"</code></pre>
+										<button class="mn6">Sprawdź</button>
+										<pre><code>7 * "-5"</code></pre>
+										<button class="mn7">Sprawdź</button>
+										<pre><code>-3 * true</code></pre>
+										<button class="mn8">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>operator dzielenia modulo</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Operator dzielenia modulo zwraca resztę z dzielenia pierwszego operandu przez drugi, dokonując niejawnej konwersji typów do typu Number.</p>
+								<p>Przykłady:</p>
+								<div class="two-columns">
+									<div class="example">
+										<pre><code>6 % "2"</code></pre>
+										<button class="mo1">Sprawdź</button>
+										<pre><code>6 % false</code></pre>
+										<button class="mo2">Sprawdź</button>
+										<pre><code>6 % true</code></pre>
+										<button class="mo3">Sprawdź</button>
+										<pre><code>"Britenet" % 6</code></pre>
+										<button class="mo4">Sprawdź</button>
+									</div>
+									<div class="example">
+										<pre><code>true % false</code></pre>
+										<button class="mo5">Sprawdź</button>
+										<pre><code>true % "true"</code></pre>
+										<button class="mo6">Sprawdź</button>
+										<pre><code>7 % "5"</code></pre>
+										<button class="mo7">Sprawdź</button>
+										<pre><code>-3 % true</code></pre>
+										<button class="mo8">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>operator potęgowania</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Operator potęgowania zwraca wynik gdzie pierwszy operand jest podstawą, a drugi wykładnikiem. Gdy trzeba dokonuje niejawnej konwersji typów do typu Number.</p>
+								<p>Przykłady:</p>
+								<div class="two-columns">
+									<div class="example">
+										<pre><code>6 ** "2"</code></pre>
+										<button class="po1">Sprawdź</button>
+										<pre><code>6 ** false</code></pre>
+										<button class="po2">Sprawdź</button>
+										<pre><code>6 ** true</code></pre>
+										<button class="po3">Sprawdź</button>
+										<pre><code>"Britenet" ** 6</code></pre>
+										<button class="mo4">Sprawdź</button>
+									</div>
+									<div class="example">
+										<pre><code>true ** false</code></pre>
+										<button class="po5">Sprawdź</button>
+										<pre><code>true ** "true"</code></pre>
+										<button class="po6">Sprawdź</button>
+										<pre><code>7 ** "5"</code></pre>
+										<button class="po7">Sprawdź</button>
+										<pre><code>3 ** true</code></pre>
+										<button class="po8">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>operatory > oraz <</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Operatory ”większy od” oraz ”mniejszy od” testują relację pomiędzy operandami. Operandy innego typu niż Number są do niego transformowane.</p>
+								<p>Przykłady:</p>
+								<div class="two-columns">
+									<div class="example">
+										<pre><code>6 < "2"</code></pre>
+										<button class="wimn1">Sprawdź</button>
+										<pre><code>6 > false</code></pre>
+										<button class="wimn2">Sprawdź</button>
+										<pre><code>6 < true</code></pre>
+										<button class="wimn3">Sprawdź</button>
+										<pre><code>"Britenet" < 6</code></pre>
+										<button class="wimn4">Sprawdź</button>
+									</div>
+									<div class="example">
+										<pre><code>true > false</code></pre>
+										<button class="wimn5">Sprawdź</button>
+										<pre><code>true > "true"</code></pre>
+										<button class="wimn6">Sprawdź</button>
+										<pre><code>7 < "8"</code></pre>
+										<button class="wimn7">Sprawdź</button>
+										<pre><code>3 < true</code></pre>
+										<button class="wimn8">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>jednoargumentowy + oraz -</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Operatory te transformują inne typy zmiennych do typu Number. W przypadku gdy dana wartość nie może być przetransformowana, zwracany jest NaN.</p>
+								<p>Operator negacji zwraca wartość typu Number ze zmienionym znakiem.</p>
+								<p>Przykłady:</p>
+								<div class="two-columns">
+									<div class="example">
+										<pre><code>+"2"</code></pre>
+										<button class="jed1">Sprawdź</button>
+										<pre><code>+"-3"</code></pre>
+										<button class="jed2">Sprawdź</button>
+										<pre><code>+true</code></pre>
+										<button class="jed3">Sprawdź</button>
+										<pre><code>+"Britenet"</code></pre>
+										<button class="jed4">Sprawdź</button>
+									</div>
+									<div class="example">
+										<pre><code>-"2"</code></pre>
+										<button class="jed5">Sprawdź</button>
+										<pre><code>-"-3"</code></pre>
+										<button class="jed6">Sprawdź</button>
+										<pre><code>-false</code></pre>
+										<button class="jed7">Sprawdź</button>
+										<pre><code>-true</code></pre>
+										<button class="jed8">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>typ prosty == typ referencyjny</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<p>Gdy jeden z operandów jest typu String lub Number, a drugi typu Object następuje niejawna konwersja typu Object do typu prostego za pomocą wewnętrznej operacji <span class="code">ToPrimitive.</span></p>
+								<p>Jeśli jeden z operandów jest typu Boolean, a drugi typu Object, na operandzie typu Object zostaje wywolana wewnętrznej metoda <span class="code">ToNumber</span>, która to z kolei wywoła <span class="code">ToPrimitive</span> dla typu Object, a następnie zwróci wartość typu Number.</p>
+								<p><span class="code">ToPrimitive</span> zwraca wartość wywołując <span class="code">DefaultValue</span>, wewnętrzną metode Object, która to za pomocą funkcji <span class="code">toString</span> lub <span class="code">valueOf</span> zwraca wartość typu prostego.</p>
+								<p>W przypadku gdy <span class="code">toString</span> i <span class="code">valueOf</span> nie są dostępne zostanie zwrócony TypeError.</p>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>typ prosty == typ referencyjny c.d.</h2>
 						</div>
 						<div class="slide-content">
 							<article>
 								<div class="two-columns">
 									<div class="example">
-										<p>Operator równości</p>
-										<pre><code contenteditable="true">[ 1 ] == true</code></pre>
+										<p>Object == String, Object == Number</p>
+										<pre><code contenteditable="true">[ 1 ] == 1</code></pre>
 										<button class="play">Sprawdź</button>
-										<pre><code contenteditable="true">[ 0 ] == true</code></pre>
+										<pre><code contenteditable="true">[ 0 ] == "0"</code></pre>
 										<button class="play">Sprawdź</button>
-										<pre><code>let arr = [3];
-if (arr == true) {
-	console.log('true');
-} else {
-	 console.log('false');
-}</code></pre>
-										<button class="play arr1">Sprawdź</button>
-										<pre><code>let arr = [];
-if (arr) {
-	console.log('true');
-} else {
-	 console.log('false');
-}</code></pre>
-										<button class="play arr3">Sprawdź</button>
+										<pre><code contenteditable="true">[ "Britenet" ] == "Britenet"</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">[ "1" ] == 1</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">[] == ""</code></pre>
+										<button class="play">Sprawdź</button>
 									</div>
 									<div class="example">
-										<p>Operator identyczności</p>
-										<pre><code contenteditable="true">[ 1 ] === true</code></pre>
+										<p>Boolean == Object</p>
+										<pre><code contenteditable="true">[ 1 ] == true</code></pre>
 										<button class="play">Sprawdź</button>
-										<pre><code contenteditable="true">[ 0 ] === true</code></pre>
+										<pre><code contenteditable="true">[ 2 ] == true</code></pre>
 										<button class="play">Sprawdź</button>
-										<pre><code>let arr = [3];
-if (arr.length) {
-	console.log('true');
-} else {
-	console.log('false');
-}</code></pre>
-										<button class="play arr2">Sprawdź</button>
-										<pre><code>let arr = [];
-if (arr.length) {
-	console.log('true');
-} else {
-	console.log('false');
-}</code></pre>
-										<button class="play arr4">Sprawdź</button>
+										<pre><code contenteditable="true">[ 0 ] == false</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">[ "" ] == false</code></pre>
+										<button class="play">Sprawdź</button>
+										<pre><code contenteditable="true">[] == false</code></pre>
+										<button class="play">Sprawdź</button>
+									</div>
+								</div>
+							</article>
+						</div>
+					</section>
+					<section>
+						<div class="slide-content-header">
+							<h1>Niejawna konwersja typów</h1>
+							<h2>Konkatenacje wartości o typie referencyjnym i prostym</h2>
+						</div>
+						<div class="slide-content">
+							<article>
+								<div class="two-columns">
+									<div class="example">
+										<p>Object + String, Object + Number</p>
+										<pre><code>[ 3 ] + "4"</code></pre>
+										<button class="prref1">Sprawdź</button>
+										<pre><code>[ 1, 2, 3 ] + 4</code></pre>
+										<button class="prref2">Sprawdź</button>
+										<pre><code>{} + "4"</code></pre>
+										<button class="prref3">Sprawdź</button>
+										<pre><code>[ 4 ] + 4</code></pre>
+										<button class="prref4">Sprawdź</button>
+										<pre><code>[] + "Britenet"</code></pre>
+										<button class="prref5">Sprawdź</button>
+									</div>
+									<div class="example">
+										<p>Object + Boolean</p>
+										<pre><code>{} + true</code></pre>
+										<button class="prref6">Sprawdź</button>
+										<pre><code>[ 2 ] + true</code></pre>
+										<button class="prref7">Sprawdź</button>
+										<pre><code>[ 1, 2, 3 ] + false</code></pre>
+										<button class="prref8">Sprawdź</button>
+										<pre><code>[ true ] + false</code></pre>
+										<button class="prref9">Sprawdź</button>
+										<pre><code>[ -1 ] + true</code></pre>
+										<button class="prref10">Sprawdź</button>
 									</div>
 								</div>
 							</article>
@@ -606,11 +812,16 @@ if (arr.length) {
 					<section>
 						<div class="slide-content-header">
 							<h1>Podsumowanie</h1>
+							<h2>Niejawna konwersja typów - dlaczego unikać?</h2>
 						</div>
 						<div class="slide-content">
 							<article>
-								<p>Tak jak widzieliśmy na wcześniejszych slajdach to jak JavaScript porównuje wartości potrafi wprowadzać zamieszanie jeśli nie zaznajomimy się z jego zasadami. Nieznajomość działania niejawnej konwersji typów może generować błędy w logice kodu aplikacji. Zrozumienie i zapamiętanie zasad dotyczących operatorów porówniania, niejawnej konwersji oraz ”falsy values” potrafi często zaoszczędzić nam bólu głowy.</p>
-								<p>W przypadku testowania równości należy używać operatora identyczności kiedykolwiek tylko jest to możliwe. Testowanie zarówno typu jak i wartości daje znacznie większą pewność że wynik będzie zgodny z oczekiwanym.</p>
+								<ul>
+									<li>Operator równości nie opiera się na porównaniu wartości logicznej operandów, ale na ich wartościach numerycznych.</li>
+									<li>Operator konkatenacji w przypadku napotkania wartości o typie String w swoich operandach przekształca pozostałe z nich również do typu String.</li>
+								</ul>
+								<p>To jak JavaScript porównuje wartości potrafi wprowadzać zamieszanie jeśli nie zaznajomimy się z jego zasadami. Nieznajomość działania niejawnej konwersji typów może generować błędy w logice kodu aplikacji. Zrozumienie i zapamiętanie zasad dotyczących operatorów porówniania, niejawnej konwersji oraz ”falsy values” potrafi często zaoszczędzić nam bólu głowy.</p>
+								<p>W przypadku testowania równości należy używać operatora identyczności kiedykolwiek tylko jest to możliwe. Testowanie zarówno typu, jak i wartości daje znacznie większą pewność że wynik będzie zgodny z oczekiwanym.</p>
 								<p>Jeśli nie potrzebujesz -0 oraz +0 to nie używaj metody Object.is(). Sprawdzenie czy wartość jest NaN możesz wykonać za pomocą wbudowanej metody isNaN(), bez użycia Object.is().</p>
 							</article>
 						</div>
@@ -625,6 +836,10 @@ if (arr.length) {
 								<p><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.6" target="_blank">The Strict Equality Comparison Algorithm</a></p>
 								<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank">Equality comparisons and sameness</a></p>
 								<p><a href="https://dorey.github.io/JavaScript-Equality-Table/" target="_blank">JS Comparison Table</a></p>
+								<p><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-9.1" target="_blank">ToPrimitive</a></p>
+								<p><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-9.11" target="_blank">IsCallable</a></p>
+								<p><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-8.12.8" target="_blank">[[DefaultValue]] (hint)</a></p>
+								<p><a href="https://kot-zrodlowy.pl/javascript/2018/07/17/absurdy-js.html" target="_blank">Wszystkie dziwactwa JS-a i inne rzeczy, za które go kochamy</a></p>
 							</article>
 						</div>
 					</section>
